@@ -1,4 +1,11 @@
-
+- name: Debug project structure
+  run: |
+    echo "===== PROJECT FILES ====="
+    ls -la
+    echo "===== GRADLE FILES ====="
+    find . -maxdepth 4 \( -name "settings.gradle*" -o -name "build.gradle*" -o -name "gradlew" \) -print
+    echo "===== AVAILABLE TASKS ====="
+    ./gradlew tasks --all
 name: Build Android APK
 
 on:
